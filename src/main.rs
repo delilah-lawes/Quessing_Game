@@ -1,6 +1,7 @@
 use std::io;
 use rand::Rng;
 use std::cmp::Ordering;
+
 fn main() {
     println!("Guess the number!");
 
@@ -10,11 +11,11 @@ fn main() {
         println!("Please input your guess.");
 
         let mut guess = String::new();
-        //mut means mutable, we must specify this. Otherwise, we get an error.
+        // 'mut' means mutable, we must specify this. Otherwise, we get an error.
 
         io::stdin()
             .read_line(&mut guess)
-            .expect("Failed to read line"); //handling potential read errors
+            .expect("Failed to read line"); // Handling potential read errors
 
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
@@ -30,9 +31,6 @@ fn main() {
                 println!("You win!");
                 break;
             }
-
         }
-    
-    
     }
 }
